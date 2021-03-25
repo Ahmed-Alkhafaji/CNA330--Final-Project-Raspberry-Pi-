@@ -9,12 +9,16 @@ A VPN stands for Virtual Private Network which means it gives you privacy online
 
 3- You can surf the web anonymously
 
-## what is the benefit of using Pi-hole?
+## what is the benefit of using VPN ?
+By enabling a VPN, you are adding an extra layer of security to your network
+
 #### - PI-HOLE CAN MAKE YOUR NETWORK FASTER:
 Pi-hole work at the DNS level.  So when an ad is blocked, it’s actually prevented from being downloaded 
 in the first place because the DNS query is intercepted. Since these ad images, videos, and sounds are not being downloaded, your network will perform better.
-#### -  PI-HOLE CAN PROTECT YOUR NETWORK FROM MALWARE:
-We can add additional block lists to your installation that will prevent domains that are known to serve malware or act as a phishing site from ever entering your network.
+
+#### -  What will we use the VPN for ?
+We will set up a VPN server on the home network using a Raspberry Pi. This way we can securely connect to my local network while we are not home. Also, we just don't want to leave an SSH port open for just anybody to hack in. 
+When you send your data online, a VPN creates a tunnel between you and your called server, it is done by utilizing a second server, when you request a page on the internet without the VPN, it goes directly to your requested server, but with VPN enabled, your request gets encrypted and goes to the server of your VPN provider, and then it goes to your requested server.
 #### -  PI-HOLE CAN BLOCK ADS IN NON-TRADITIONAL PLACES:
 Advertisements in smart TVs and mobile apps can’t be blocked by browser-based ad blockers because smart TVs and  mobile apps don’t run in a browser.  This is where Pi-hole shines; since the ads are prevented at the network level (before the ads reach the device), you can prevent ads from appearing on Internet-connected devices that aren’t 
 a Web browser.
