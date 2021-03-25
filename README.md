@@ -326,6 +326,24 @@ for easy transfer. Please use this profile only on one
 device and create additional profiles for other devices.
 ========================================================
 ```
+Now, the file is made and we need to copy it to our desktop so that I am going to use the secure copy method.
+Run the following command to do so:
+```
+pi@raspberrypi:~/Desktop $ sudo scp pi@10.0.0.12:/home/pi/ovpns/ahmed9.ovpn /c\Users\ahmed\Desktop
+The authenticity of host '10.0.0.12 (10.0.0.12)' can't be established.
+ECDSA key fingerprint is SHA256:7gBmz2n9k6oeEEvcm2gCPCVlXWswjiWG6gcdG7XHfck.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '10.0.0.12' (ECDSA) to the list of known hosts.
+pi@10.0.0.12's password: 
+ahmed9.ovpn                                        100% 2659   241.7KB/s   00:00    
+```
 
 
+When that's done, we need a VPN client for PC, for that, I am going to use the OpenVPN Client software in the OpenVPN community-download page.
 
+Now, when the download and installation process is finished, run it, if you get an error, don't worry, it's just that the software did not find any profile, click ok and you will get a new icon in the system tray of your PC.
+
+
+### We need to do is wait for a little bit and give the GUI a little time to do its things. After a few moments, you will see a green icon and the VPN should get connected.
+
+### After typing the password, you should be connected to your very own OpenVPN server on Raspberry Pi.Start browsing with privacy!. Connect to Your VPN From Anywhere.
