@@ -37,15 +37,6 @@ curl -L https://install.pivpn.io | bash
 curl -L https://install.pivpn.io | TESTING- bash
 ```
 
-  ──────────────────────────┤ Installing packages ├──────────────────────────┐
- │               Configuring netfilter-persistent (armhf)                    │ 
- │                                                                           │ 
- │                                                                           │ 
- │                                                                           │ 
- │                                    80%                                    │ 
- │                                                                           │ 
- └───────────────────────────────────────────────────────────────────────────┘
-
 Next, SSH into your Raspberry PI and paste in your code and hit enter, this will download & set up all the necessary setup to run OpenVPN. After that, you will be greeted with the below screen saying it will convert your raspberry pi into OpenVPN
 
      ┌───────────────────┤ PiVPN Automated Installer ├────────────────────┐
@@ -104,19 +95,7 @@ Next, SSH into your Raspberry PI and paste in your code and hit enter, this will
      ┌──────────────────────────┤ Local Users ├───────────────────────────┐
      │                                                                    │ 
      │ Choose a local user that will hold your ovpn configurations.       │ 
-     │                                                                    │ 
-     │                                                                    │ 
-     │                                                                    │ 
-     │                                                                    │ 
-     │                                                                    │ 
-     │                                                                    │ 
-     │                                                                    │ 
-     │                                                                    │ 
-     │                                                                    │ 
-     │                                                                    │ 
-     │                                                                    │ 
-     │                                                                    │ 
-     │                                                                    │ 
+     │                                                                    |
      │                                                                    │ 
      │                               <Ok>                                 │ 
      │                                                                    │ 
@@ -273,19 +252,80 @@ Setup PiVPN
                                                                             
 ### It will run the code and install everything necessary.
 
- ┌──────────────────────────┤ Installing packages ├──────────────────────────┐
- │ Running dpkg                                                              │ 
- │                                                                           │ 
- │                                                                           │ 
- │                                                                           │ 
- │                                    15%                                    │ 
- │                                                                           │ 
- └───────────────────────────────────────────────────────────────────────────┘ 
-                                                                               
+### we have to log back into the raspberry pi and run pivpn add
+
+ it so.
+
+     ┌─────────────────────┤ Installation Complete! ├─────────────────────┐
+     │                                                                    │ 
+     │ Now run 'pivpn add' to create the client profiles.                 │ 
+     │ Run 'pivpn help' to see what else you can do!                      │ 
+     │                                                                    │ 
+     │ If you run into any issue, please read all our documentation       │ 
+     │ carefully.                                                         │ 
+     │ All incomplete posts or bug reports will be ignored or deleted.    │ 
+     │                                                                    │ 
+     │ Thank you for using PiVPN.                                         │ 
+     |                                                                    |
+     │                               <Ok>                                 │ 
+     │                                                                    │ 
+     └────────────────────────────────────────────────────────────────────┘ 
+                                                                            
+## Finally, you need to reboot your pi and finish the setup process.
+
+     ┌─────────────────────────────┤ Reboot ├─────────────────────────────┐
+     │                                                                    │ 
+     │ It is strongly recommended you reboot after installation.  Would   │ 
+     │ you like to reboot now?                                            │ 
+     |                                                                    |
+     │                                                                    │ 
+     │                  <Yes>                     <No>                    │ 
+     │                                                                    │ 
+     └────────────────────────────────────────────────────────────────────┘ 
+                                                                            
+## NOW
+After, the Raspberry Pi reboots log back into the Pi using SSH and run the command:
+```
+pivpn add
+```
+This will create a new VPN profile, we need to create a VPN profile for every device we need to connect to. When you enter pivpn add into your terminal and hit enter, you will be prompted with some options, which is shown below.
+```
+pi@raspberrypi:~ $ pivpn add
+::: Create a client ovpn profile, optional nopass
+:::
+::: Usage: pivpn <-a|add> [-n|--name <arg>] [-p|--password <arg>]|[nopass] [-d|--days <number>] [-b|--bitwarden] [-i|--iOS] [-o|--ovpn] [-h|--help]
+:::
+::: Commands:
+:::  [none]               Interactive mode
+:::  nopass               Create a client without a password
+:::  -n,--name            Name for the Client (default: 'raspberrypi')
+:::  -p,--password        Password for the Client (no default)
+:::  -d,--days            Expire the certificate after specified number of days (default: 1080)
+:::  -b,--bitwarden       Create and save a client through Bitwarden
+:::  -i,--iOS             Generate a certificate that leverages iOS keychain
+:::  -o,--ovpn            Regenerate a .ovpn config file for an existing client
+:::  -h,--help            Show this help dialog
+
+Enter a Name for the Client:  ahmed9
+How many days should the certificate last?  1080
+Enter the password for the client:  
+Enter the password again to verify:  
+spawn ./easyrsa build-client-full ahmed9
+
+Client's cert found: ahmed9.crt
+Client's Private Key found: ahmed9.key
+CA public Key found: ca.crt
+tls Private Key found: ta.key
 
 
-
-
+========================================================
+Done! ahmed9.ovpn successfully created! 
+ahmed9.ovpn was copied to:
+  /home/pi/ovpns
+for easy transfer. Please use this profile only on one
+device and create additional profiles for other devices.
+========================================================
+```
 
 
 
