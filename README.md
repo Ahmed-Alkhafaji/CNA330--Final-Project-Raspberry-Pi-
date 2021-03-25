@@ -1,12 +1,14 @@
-# CNA330--Final-Project-Raspberry-Pi-
-
 # Turn the Raspberry PI into A VPN Server with OpenVPN
 
 ## What is a VPN?
 A VPN stands for Virtual Private Network which means it gives you privacy online. Initially, VPNs were used by big organizations and governments because of obvious security reasons, but nowadays VPNs are used by everyone because it ensures privacy and data security.
+
 1- Your locations stay private
+
 2- Your data is encrypted
+
 3- You can surf the web anonymously
+
 ## what is the benefit of using Pi-hole?
 #### - PI-HOLE CAN MAKE YOUR NETWORK FASTER:
 Pi-hole work at the DNS level.  So when an ad is blocked, it’s actually prevented from being downloaded 
