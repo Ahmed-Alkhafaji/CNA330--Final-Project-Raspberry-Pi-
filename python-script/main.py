@@ -1,6 +1,5 @@
 # This code is to ping my Raspberry Pi
-# Luma Naser
-# CNA 335 Winter 3/11/2021
+
 from Server import Server
 
 def print_program_info():
@@ -10,6 +9,6 @@ def print_program_info():
 # This is the entry point to our program
 if __name__ == '__main__':
     print_program_info()
-    Pi = Server('192.168.1.7')
+    Pi = Server('10.0.0.12')
     # Call Ping method and print the results
     print(Pi.ping())
