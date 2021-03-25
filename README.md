@@ -25,14 +25,6 @@ When you send your data online, a VPN creates a tunnel between you and your call
 sudo apt-get update
 sudo apt-get upgrade
 ```
-### It might you need curl tool, to install it:
-```
-sudo apt-get install curl
-```
-## To install Pi-hole, run this command:
-```
-curl -sSL https://install.pi-hole.net | bash
-```
 ## Installing OpenVPN with PiVPN in Raspberry Pi Zero
 By following the steps below and you will have a VPN server in no time.
 
@@ -40,10 +32,85 @@ By following the steps below and you will have a VPN server in no time.
 ```
 curl -L https://install.pivpn.io | bash
 ```
-### Installation
+### Test(unstable)Branch
 ```
 curl -L https://install.pivpn.io | TESTING- bash
 ```
+
+  ──────────────────────────┤ Installing packages ├──────────────────────────┐
+ │               Configuring netfilter-persistent (armhf)                    │ 
+ │                                                                           │ 
+ │                                                                           │ 
+ │                                                                           │ 
+ │                                    80%                                    │ 
+ │                                                                           │ 
+ └───────────────────────────────────────────────────────────────────────────┘
+
+Next, SSH into your Raspberry PI and paste in your code and hit enter, this will download & set up all the necessary setup to run OpenVPN. After that, you will be greeted with the below screen saying it will convert your raspberry pi into OpenVPN
+
+     ┌───────────────────┤ PiVPN Automated Installer ├────────────────────┐
+     │                                                                    │ 
+     │ This installer will transform your Raspberry Pi into an OpenVPN or │ 
+     │ WireGuard server!                                                  │ 
+     │                                                                    │ 
+     │                                                                    │ 
+     │                                                                    │ 
+     │                                                                    │ 
+     │                                                                    │ 
+     │                               <Ok>                                 │ 
+     │                                                                    │ 
+     └────────────────────────────────────────────────────────────────────┘
+
+Asking you to set up a static IP address for your Raspberry Pi, we do not need to do it.
+
+
+     ┌────────────────────────┤ DHCP Reservation ├────────────────────────┐
+     │                                                                    │ 
+     │ Are you Using DHCP Reservation on your Router/DHCP Server?         │ 
+     │ These are your current Network Settings:                           │ 
+     │                                                                    │ 
+     │         IP address:    10.0.0.12/24                                │ 
+     │         Gateway:       10.0.0.1                                    │ 
+     │                                                                    │ 
+     │ Yes: Keep using DHCP reservation                                   │ 
+     │ No: Setup static IP address                                        │ 
+     │ Don't know what DHCP Reservation is? Answer No.                    │ 
+     │                                                                    |
+     │                                                                    │ 
+     │                  <Yes>                     <No>                    │ 
+     │                                                                    │ 
+     └────────────────────────────────────────────────────────────────────┘ 
+                                                                           
+I will use the current network setting as a static Ip address
+
+     ┌───────────────────────┤ Static IP Address ├────────────────────────┐
+     │                                                                    │ 
+     │ Do you want to use your current network settings as a static       │ 
+     │ address?                                                           │ 
+     │                                                                    │ 
+     │         IP address:    10.0.0.12/24                                │ 
+     │         Gateway:       10.0.0.1                                    │ 
+     │                                                                    │ 
+     │                                                                    |
+     │                                                                    │ 
+     │                  <Yes>                     <No>                    │ 
+     │                                                                    │ 
+     └────────────────────────────────────────────────────────────────────┘
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
