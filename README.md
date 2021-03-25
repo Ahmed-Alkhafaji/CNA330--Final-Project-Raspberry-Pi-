@@ -61,7 +61,7 @@ Next, SSH into your Raspberry PI and paste in your code and hit enter, this will
      │                                                                    │ 
      └────────────────────────────────────────────────────────────────────┘
 
-## Asking you to set up a static IP address for your Raspberry Pi, we do not need to do it.
+### Asking you to set up a static IP address for your Raspberry Pi, we do not need to do it.
 
 
      ┌────────────────────────┤ DHCP Reservation ├────────────────────────┐
@@ -81,7 +81,7 @@ Next, SSH into your Raspberry PI and paste in your code and hit enter, this will
      │                                                                    │ 
      └────────────────────────────────────────────────────────────────────┘ 
                                                                            
-## I will use the current network setting as a static Ip address
+### I will use the current network setting as a static Ip address
 
      ┌───────────────────────┤ Static IP Address ├────────────────────────┐
      │                                                                    │ 
@@ -99,7 +99,7 @@ Next, SSH into your Raspberry PI and paste in your code and hit enter, this will
 
 
 
-## we need to specify a Local User for the server.
+### we need to specify a Local User for the server.
 
      ┌──────────────────────────┤ Local Users ├───────────────────────────┐
      │                                                                    │ 
@@ -122,7 +122,7 @@ Next, SSH into your Raspberry PI and paste in your code and hit enter, this will
      │                                                                    │ 
      └────────────────────────────────────────────────────────────────────┘ 
 
-## Hit enter and you will be presented with the user selection page, choose pi (Which is the default User), and hit enter
+### Hit enter and you will be presented with the user selection page, choose pi (Which is the default User), and hit enter
 
      ┌─────────────────────────┤ Choose A User ├──────────────────────────┐
      │ Choose (press space to select):                                    │ 
@@ -135,7 +135,7 @@ Next, SSH into your Raspberry PI and paste in your code and hit enter, this will
      │                                                                    │ 
      └────────────────────────────────────────────────────────────────────┘ 
                                                                            
-## We need to choose what type of VPN you like to use. It's the open VPN: Choose OpenVPN and hit Enter.
+### We need to choose what type of VPN you like to use. It's the open VPN: Choose OpenVPN and hit Enter.
 
 
      ┌───────────────────────┤ Installation mode ├────────────────────────┐
@@ -160,7 +160,7 @@ Next, SSH into your Raspberry PI and paste in your code and hit enter, this will
      └────────────────────────────────────────────────────────────────────┘ 
                                                                            
 
-## It will prompt you to choose a protocol, options are TCP and UDP. I am using UDP because it is faster than TCP.
+### It will prompt you to choose a protocol, options are TCP and UDP. I am using UDP because it is faster than TCP.
 
 
      ┌───────────────────────┤ Installation mode ├────────────────────────┐
@@ -179,9 +179,109 @@ Next, SSH into your Raspberry PI and paste in your code and hit enter, this will
      │                                                                    │ 
      └────────────────────────────────────────────────────────────────────┘ 
                                                                             
+###  I select the UDP port.
 
+     ┌──────────────────────┤ Default openvpn Port ├──────────────────────┐
+     │ You can modify the default openvpn port.                           │ 
+     │ Enter a new value or hit 'Enter' to retain the default             │ 
+     │                                                                    │ 
+     │ 1194______________________________________________________________ │ 
+     │                                                                    │ 
+     │                                                                    |
+     │                                                                    │ 
+     │                 <Ok>                     <Cancel>                  │ 
+     │                                                                    │ 
+     └────────────────────────────────────────────────────────────────────┘ 
+                                                                            
 
+### Confirm the settings by selecting yes and hitting enter.
 
+     ┌───────────────────┤ Confirm Custom Port Number ├───────────────────┐
+     │                                                                    │ 
+     │ Are these settings correct?                                        │ 
+     │     PORT:   1194                                                   │ 
+     │                                                                    │ 
+     │                                                                    │ 
+     │                  <Yes>                     <No>                    │ 
+     │                                                                    │ 
+     └────────────────────────────────────────────────────────────────────┘ 
+                                                                            
+### prompted to select a DNS provider. I am selecting Google as my DNS provider.
+
+Setup PiVPN
+
+     ┌──────────────────────────┤ DNS Provider ├──────────────────────────┐
+     │ Select the DNS Provider for your VPN Clients (press space to       │ 
+     │ select).                                                           │ 
+     │ To use your own, select Custom.                                    │ 
+     │                                                                    │ 
+     │ In case you have a local resolver running, i.e. unbound, select    │ 
+     │ "PiVPN-is-local-DNS" and make sure your resolver is listening on   │ 
+     │ "10.8.0.1", allowing requests from "10.8.0.0/24".                  │ 
+     │                                                                    │ 
+     │    ( ) DNS.WATCH                                                   │ 
+     │    ( ) Norton                                                  ▒   │ 
+     │    ( ) FamilyShield                                            ▒   │ 
+     │    ( ) CloudFlare                                                  │ 
+     │    (*) Google                                                  ▒   │ 
+     │    ( ) PiVPN-is-local-DNS                                          │ 
+     │                                                                    │ 
+     │                                                                    │ 
+     │                 <Ok>                     <Cancel>                  │ 
+     │                                                                    │ 
+     └────────────────────────────────────────────────────────────────────┘ 
+                                                                            
+ ### We have to enter your dynamic DNS server name and hit enter, if everything is alright, you will receive your public IP address in the raspberry pi console.                                                                           
+     ┌────────────────────────┤ Public IP or DNS ├────────────────────────┐
+     │ Will clients use a Public IP or DNS Name to connect to your server │ 
+     │ (press space to select)?                                           │ 
+     │                                                                    │ 
+     │    (*) 24.17.196.59  Use this public IP                            │ 
+     │    ( ) DNS Entry     Use a public DNS                              │ 
+     │                                                                    |
+     │                 <Ok>                     <Cancel>                  │ 
+     │                                                                    │ 
+     └────────────────────────────────────────────────────────────────────┘ 
+                                                                     
+  ### Telling us to enable automatic updates for bug fixes and security updates.                                 
+
+     ┌──────────────────────┤ Unattended Upgrades ├───────────────────────┐
+     │                                                                    │ 
+     │ Since this server will have at least one port open to the          │ 
+     │ internet, it is recommended you enable unattended-upgrades.        │ 
+     │ This feature will check daily for security package updates only    │ 
+     │ and apply them when necessary.                                     │ 
+     │ It will NOT automatically reboot the server so to fully apply some │ 
+     │ updates you should periodically reboot.                            │ 
+     │                                                                    |
+     │                                                                    │ 
+     │                               <Ok>                                 │ 
+     │                                                                    │ 
+     └────────────────────────────────────────────────────────────────────┘ 
+                                                                            
+### Hit yes here
+
+     ┌──────────────────────┤ Unattended Upgrades ├───────────────────────┐
+     │                                                                    │ 
+     │ Do you want to enable unattended upgrades of security patches to   │ 
+     │ this server?                                                       │ 
+     │                                                                    |
+     │                                                                    │ 
+     │                  <Yes>                     <No>                    │ 
+     │                                                                    │ 
+     └────────────────────────────────────────────────────────────────────┘ 
+                                                                            
+### It will run the code and install everything necessary.
+
+ ┌──────────────────────────┤ Installing packages ├──────────────────────────┐
+ │ Running dpkg                                                              │ 
+ │                                                                           │ 
+ │                                                                           │ 
+ │                                                                           │ 
+ │                                    15%                                    │ 
+ │                                                                           │ 
+ └───────────────────────────────────────────────────────────────────────────┘ 
+                                                                               
 
 
 
