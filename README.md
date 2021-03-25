@@ -61,7 +61,7 @@ Next, SSH into your Raspberry PI and paste in your code and hit enter, this will
      │                                                                    │ 
      └────────────────────────────────────────────────────────────────────┘
 
-Asking you to set up a static IP address for your Raspberry Pi, we do not need to do it.
+## Asking you to set up a static IP address for your Raspberry Pi, we do not need to do it.
 
 
      ┌────────────────────────┤ DHCP Reservation ├────────────────────────┐
@@ -81,7 +81,7 @@ Asking you to set up a static IP address for your Raspberry Pi, we do not need t
      │                                                                    │ 
      └────────────────────────────────────────────────────────────────────┘ 
                                                                            
-I will use the current network setting as a static Ip address
+## I will use the current network setting as a static Ip address
 
      ┌───────────────────────┤ Static IP Address ├────────────────────────┐
      │                                                                    │ 
@@ -99,15 +99,86 @@ I will use the current network setting as a static Ip address
 
 
 
+## we need to specify a Local User for the server.
+
+     ┌──────────────────────────┤ Local Users ├───────────────────────────┐
+     │                                                                    │ 
+     │ Choose a local user that will hold your ovpn configurations.       │ 
+     │                                                                    │ 
+     │                                                                    │ 
+     │                                                                    │ 
+     │                                                                    │ 
+     │                                                                    │ 
+     │                                                                    │ 
+     │                                                                    │ 
+     │                                                                    │ 
+     │                                                                    │ 
+     │                                                                    │ 
+     │                                                                    │ 
+     │                                                                    │ 
+     │                                                                    │ 
+     │                                                                    │ 
+     │                               <Ok>                                 │ 
+     │                                                                    │ 
+     └────────────────────────────────────────────────────────────────────┘ 
+
+## Hit enter and you will be presented with the user selection page, choose pi (Which is the default User), and hit enter
+
+     ┌─────────────────────────┤ Choose A User ├──────────────────────────┐
+     │ Choose (press space to select):                                    │ 
+     │                                                                    │ 
+     │    (*) pi                                                          │ 
+     │    ( ) ahmed9                                                      │ 
+     │                                                                    |
+     │                                                                    │ 
+     │                 <Ok>                     <Cancel>                  │ 
+     │                                                                    │ 
+     └────────────────────────────────────────────────────────────────────┘ 
+                                                                           
+## We need to choose what type of VPN you like to use. It's the open VPN: Choose OpenVPN and hit Enter.
 
 
+     ┌───────────────────────┤ Installation mode ├────────────────────────┐
+     │ WireGuard is a new kind of VPN that provides near-instantaneous    │ 
+     │ connection speed, high performance, and modern cryptography.       │ 
+     │                                                                    │ 
+     │ It's the recommended choice especially if you use mobile devices   │ 
+     │ where WireGuard is easier on battery than OpenVPN.                 │ 
+     │                                                                    │ 
+     │ OpenVPN is still available if you need the traditional, flexible,  │ 
+     │ trusted VPN protocol or if you need features like TCP and custom   │ 
+     │ search domain.                                                     │ 
+     │                                                                    │ 
+     │ Choose a VPN (press space to select):                              │ 
+     │                                                                    │ 
+     │    ( ) WireGuard                                                   │ 
+     │    (*) OpenVPN                                                     │ 
+     │                                                                    │ 
+     │                                                                    │ 
+     │                 <Ok>                     <Cancel>                  │ 
+     │                                                                    │ 
+     └────────────────────────────────────────────────────────────────────┘ 
+                                                                           
+
+## It will prompt you to choose a protocol, options are TCP and UDP. I am using UDP because it is faster than TCP.
 
 
-
-
-
-
-
+     ┌───────────────────────┤ Installation mode ├────────────────────────┐
+     │                                                                    │ 
+     │ PiVPN uses the following settings that we believe are good         │ 
+     │ defaults for most users. However, we still want to keep            │ 
+     │ flexibility, so if you need to customize them, choose Yes.         │ 
+     │                                                                    │ 
+     │ * UDP or TCP protocol: UDP                                         │ 
+     │ * Custom search domain for the DNS field: None                     │ 
+     │ * Modern features or best compatibility: Modern features (256 bit  │ 
+     │ certificate + additional TLS encryption)                           │ 
+     │                                                                    | 
+     │                                                                    │ 
+     │                  <Yes>                     <No>                    │ 
+     │                                                                    │ 
+     └────────────────────────────────────────────────────────────────────┘ 
+                                                                            
 
 
 
